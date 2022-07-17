@@ -9,16 +9,25 @@ namespace assignment3.model
 {
     internal class product
     {
+        static List<product>products = new List<product>();
        public String objname { get; set; }
-        public String number { get; set; }
-        public String inventoryname { get; set; }
+        public int number { get; set; }
+        public int inventorynumber { get; set; }
         public String date{ get; set; }
-        public String count { get; set; }
-        public String price { get; set; }
+        public int count { get; set; }
+        public double price { get; set; }
 
         public void Save()
         {
-            MessageBox.Show($"{objname}was added");
+            products.Add(this);
+            MessageBox.Show($"{objname} added");
         }
+         static public List<product>getallproducts()
+        {
+            return products;
+        }
+        
+
     }
 }
+
