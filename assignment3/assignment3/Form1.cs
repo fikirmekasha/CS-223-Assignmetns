@@ -15,9 +15,12 @@ namespace assignment3
 {
     public partial class Form1 : Form
     {
-        public Form1()
+        Form loginPage;
+        public Form1(string user,Form login)
         {
             InitializeComponent();
+            lblun.Text = user;
+            loginPage =login;
         }
 
         product p =new product();
@@ -26,11 +29,13 @@ namespace assignment3
         {
 
 
-            Regex reg = new Regex(@"[a-z]{3}$");
+            Regex reg = new Regex(@"[a-z]{4}$");
+
             if (String.IsNullOrEmpty(txtobjname.Text) || txtobjname.Text.Length < 3)
             {
                 errorProvider1.SetError(txtobjname, "name is required");
             }
+
             else if (reg.IsMatch(txtobjname.Text)) 
                     {                 
                 errorProvider1.Clear();
@@ -40,7 +45,9 @@ namespace assignment3
                     p1.count = Convert.ToInt32(txtcount.Text);
                     p1.price = Convert.ToDouble(txtprice.Text);
                     p1.number = Convert.ToInt32(txtnumber.Text);
-                    p1.inventorynumber = Convert.ToInt32(sku.Text);   
+                    p1.inventorynumber = Convert.ToInt32(sku.Text); 
+                    p1.isavailable=checkisavailable.Checked;
+                    
 
                 }
                 catch
@@ -50,8 +57,20 @@ namespace assignment3
      
                 p1.date = dt_registered_date.Text;
                 p1.objname = txtobjname.Text;
+                p1.isavailable = checkisavailable.Checked;
 
+                string message = " ";
 
+               foreach(var i in item.CheckedItems)
+                {
+                    message+=i.ToString();
+                   
+                }
+                MessageBox.Show(message);
+                if (message == null)
+                {
+                    MessageBox.Show("Nothing checked");
+                }
                 p1.Save();
                 dataGridView1.DataSource = null;
                 dataGridView1.DataSource = product.getallproducts();
@@ -83,6 +102,22 @@ namespace assignment3
         private void txtcount_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void checkisavailable_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnlogout_Click(object sender, EventArgs e)
+        {
+            loginPage.Show();
+            Hide();
         }
     }
 }

@@ -45,8 +45,16 @@
             this.txtprice = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.checkisavailable = new System.Windows.Forms.CheckBox();
+            this.item = new System.Windows.Forms.CheckedListBox();
+            this.paymentbox = new System.Windows.Forms.GroupBox();
+            this.rbtnpay = new System.Windows.Forms.RadioButton();
+            this.rbtntele = new System.Windows.Forms.RadioButton();
+            this.lblun = new System.Windows.Forms.Label();
+            this.btnlogout = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            this.paymentbox.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -105,7 +113,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(335, 172);
+            this.label6.Location = new System.Drawing.Point(385, 172);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(37, 16);
             this.label6.TabIndex = 11;
@@ -162,7 +170,7 @@
             // 
             // txtprice
             // 
-            this.txtprice.Location = new System.Drawing.Point(286, 200);
+            this.txtprice.Location = new System.Drawing.Point(338, 191);
             this.txtprice.Name = "txtprice";
             this.txtprice.Size = new System.Drawing.Size(125, 22);
             this.txtprice.TabIndex = 20;
@@ -182,11 +190,91 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // checkisavailable
+            // 
+            this.checkisavailable.AutoSize = true;
+            this.checkisavailable.Location = new System.Drawing.Point(28, 297);
+            this.checkisavailable.Name = "checkisavailable";
+            this.checkisavailable.Size = new System.Drawing.Size(98, 20);
+            this.checkisavailable.TabIndex = 22;
+            this.checkisavailable.Text = "is available";
+            this.checkisavailable.UseVisualStyleBackColor = true;
+            this.checkisavailable.CheckedChanged += new System.EventHandler(this.checkisavailable_CheckedChanged);
+            // 
+            // item
+            // 
+            this.item.FormattingEnabled = true;
+            this.item.Items.AddRange(new object[] {
+            "product availablity",
+            "delivery"});
+            this.item.Location = new System.Drawing.Point(50, 340);
+            this.item.Name = "item";
+            this.item.Size = new System.Drawing.Size(142, 89);
+            this.item.TabIndex = 23;
+            // 
+            // paymentbox
+            // 
+            this.paymentbox.Controls.Add(this.rbtnpay);
+            this.paymentbox.Controls.Add(this.rbtntele);
+            this.paymentbox.Location = new System.Drawing.Point(236, 329);
+            this.paymentbox.Name = "paymentbox";
+            this.paymentbox.Size = new System.Drawing.Size(202, 100);
+            this.paymentbox.TabIndex = 24;
+            this.paymentbox.TabStop = false;
+            this.paymentbox.Text = "Payment Method";
+            this.paymentbox.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // rbtnpay
+            // 
+            this.rbtnpay.AutoSize = true;
+            this.rbtnpay.Location = new System.Drawing.Point(5, 56);
+            this.rbtnpay.Name = "rbtnpay";
+            this.rbtnpay.Size = new System.Drawing.Size(74, 20);
+            this.rbtnpay.TabIndex = 1;
+            this.rbtnpay.TabStop = true;
+            this.rbtnpay.Text = "Pay pal";
+            this.rbtnpay.UseVisualStyleBackColor = true;
+            // 
+            // rbtntele
+            // 
+            this.rbtntele.AutoSize = true;
+            this.rbtntele.Location = new System.Drawing.Point(6, 30);
+            this.rbtntele.Name = "rbtntele";
+            this.rbtntele.Size = new System.Drawing.Size(78, 20);
+            this.rbtntele.TabIndex = 0;
+            this.rbtntele.TabStop = true;
+            this.rbtntele.Text = "Tele birr";
+            this.rbtntele.UseVisualStyleBackColor = true;
+            // 
+            // lblun
+            // 
+            this.lblun.AutoSize = true;
+            this.lblun.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblun.Location = new System.Drawing.Point(929, 2);
+            this.lblun.Name = "lblun";
+            this.lblun.Size = new System.Drawing.Size(0, 36);
+            this.lblun.TabIndex = 25;
+            // 
+            // btnlogout
+            // 
+            this.btnlogout.Location = new System.Drawing.Point(805, 37);
+            this.btnlogout.Name = "btnlogout";
+            this.btnlogout.Size = new System.Drawing.Size(75, 23);
+            this.btnlogout.TabIndex = 26;
+            this.btnlogout.Text = "Log Out";
+            this.btnlogout.UseVisualStyleBackColor = true;
+            this.btnlogout.Click += new System.EventHandler(this.btnlogout_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1079, 535);
+            this.Controls.Add(this.btnlogout);
+            this.Controls.Add(this.checkisavailable);
+            this.Controls.Add(this.lblun);
+            this.Controls.Add(this.paymentbox);
+            this.Controls.Add(this.item);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.txtprice);
             this.Controls.Add(this.txtcount);
@@ -207,6 +295,8 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            this.paymentbox.ResumeLayout(false);
+            this.paymentbox.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -230,6 +320,13 @@
         private System.Windows.Forms.TextBox txtprice;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.CheckBox checkisavailable;
+        private System.Windows.Forms.CheckedListBox item;
+        private System.Windows.Forms.GroupBox paymentbox;
+        private System.Windows.Forms.Label lblun;
+        private System.Windows.Forms.RadioButton rbtnpay;
+        private System.Windows.Forms.RadioButton rbtntele;
+        private System.Windows.Forms.Button btnlogout;
     }
 }
 

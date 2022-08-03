@@ -16,6 +16,8 @@ namespace assignment3.model
         public String date{ get; set; }
         public int count { get; set; }
         public double price { get; set; }
+        public bool isavailable { get; set; }
+        public bool item { get; set; }
 
         public void Save()
         {
