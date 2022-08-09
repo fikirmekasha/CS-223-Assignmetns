@@ -60,7 +60,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(47, 9);
+            this.label1.Location = new System.Drawing.Point(60, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(52, 16);
             this.label1.TabIndex = 0;
@@ -69,7 +69,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(310, 18);
+            this.label2.Location = new System.Drawing.Point(324, 22);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(34, 16);
             this.label2.TabIndex = 3;
@@ -77,7 +77,7 @@
             // 
             // dt_registered_date
             // 
-            this.dt_registered_date.Location = new System.Drawing.Point(263, 37);
+            this.dt_registered_date.Location = new System.Drawing.Point(263, 53);
             this.dt_registered_date.Name = "dt_registered_date";
             this.dt_registered_date.Size = new System.Drawing.Size(200, 22);
             this.dt_registered_date.TabIndex = 5;
@@ -85,7 +85,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(582, 18);
+            this.label3.Location = new System.Drawing.Point(587, 22);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(98, 16);
             this.label3.TabIndex = 6;
@@ -141,14 +141,14 @@
             // 
             // txtnumber
             // 
-            this.txtnumber.Location = new System.Drawing.Point(28, 36);
+            this.txtnumber.Location = new System.Drawing.Point(38, 55);
             this.txtnumber.Name = "txtnumber";
             this.txtnumber.Size = new System.Drawing.Size(100, 22);
             this.txtnumber.TabIndex = 16;
             // 
             // sku
             // 
-            this.sku.Location = new System.Drawing.Point(580, 39);
+            this.sku.Location = new System.Drawing.Point(585, 53);
             this.sku.Name = "sku";
             this.sku.Size = new System.Drawing.Size(100, 22);
             this.sku.TabIndex = 17;
@@ -178,7 +178,7 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(496, 67);
+            this.dataGridView1.Location = new System.Drawing.Point(496, 118);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -257,7 +257,7 @@
             // 
             // btnlogout
             // 
-            this.btnlogout.Location = new System.Drawing.Point(805, 37);
+            this.btnlogout.Location = new System.Drawing.Point(829, 52);
             this.btnlogout.Name = "btnlogout";
             this.btnlogout.Size = new System.Drawing.Size(75, 23);
             this.btnlogout.TabIndex = 26;

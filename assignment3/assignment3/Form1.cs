@@ -8,7 +8,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using assignment3.model;
+
 
 
 namespace assignment3
@@ -42,11 +42,11 @@ namespace assignment3
                 product p1 = new product();
                 try
                 {
-                    p1.count = Convert.ToInt32(txtcount.Text);
+                    p1.quantity = Convert.ToInt32(txtcount.Text);
                     p1.price = Convert.ToDouble(txtprice.Text);
                     p1.number = Convert.ToInt32(txtnumber.Text);
-                    p1.inventorynumber = Convert.ToInt32(sku.Text); 
-                    p1.isavailable=checkisavailable.Checked;
+                    p1.inventoryNumber = Convert.ToInt32(sku.Text); 
+                    p1.isAvailable=checkisavailable.Checked;
                     
 
                 }
@@ -56,8 +56,8 @@ namespace assignment3
                 }
      
                 p1.date = dt_registered_date.Text;
-                p1.objname = txtobjname.Text;
-                p1.isavailable = checkisavailable.Checked;
+                p1.Name = txtobjname.Text;
+                p1.isAvailable = checkisavailable.Checked;
 
                 string message = " ";
 
@@ -71,9 +71,9 @@ namespace assignment3
                 {
                     MessageBox.Show("Nothing checked");
                 }
-                p1.Save();
+                p1.save();
                 dataGridView1.DataSource = null;
-                dataGridView1.DataSource = product.getallproducts();
+                dataGridView1.DataSource = product.getAllProduct();
 
             }
 
